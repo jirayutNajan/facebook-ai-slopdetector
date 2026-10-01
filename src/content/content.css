@@ -1,0 +1,168 @@
+/* Facebook AI Slop Detector - Content Styles */
+
+/* Ensure the post card has relative positioning for proper badge placement */
+.fbas-post-container {
+  position: relative !important;
+  transition: filter 0.3s ease;
+}
+
+/* Subtle Banner (60% - 70%) */
+.fbas-banner-subtle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.95), rgba(253, 230, 138, 0.95));
+  border-left: 5px solid #d97706;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 10px 12px 6px 12px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #78350f;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  animation: fbasFadeIn 0.3s ease-out;
+}
+
+.fbas-banner-subtle .fbas-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.fbas-score-pill {
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Prominent Darker Banner (70% - 80%) */
+.fbas-banner-prominent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(255, 237, 213, 0.98), rgba(254, 215, 170, 0.98));
+  border-left: 6px solid #ea580c;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 10px 12px 6px 12px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #9a3412;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.15);
+  z-index: 10;
+  animation: fbasFadeIn 0.3s ease-out;
+}
+
+.fbas-banner-prominent .fbas-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+/* Rubber Stamp Container (> 80%) */
+.fbas-stamp-overlay {
+  position: absolute;
+  top: 14px;
+  right: 28px;
+  pointer-events: auto;
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* Red Rubber Stamp Design */
+.fbas-rubber-stamp {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px double #dc2626;
+  border-radius: 8px;
+  padding: 6px 18px;
+  color: #dc2626;
+  background: rgba(254, 242, 242, 0.88);
+  backdrop-filter: blur(2px);
+  text-transform: uppercase;
+  font-family: 'Impact', 'Arial Black', -apple-system, sans-serif;
+  letter-spacing: 2px;
+  transform: rotate(-14deg);
+  box-shadow: 0 0 0 2px #dc2626, 0 4px 12px rgba(220, 38, 38, 0.35);
+  user-select: none;
+  animation: fbasStampImpact 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.fbas-stamp-text {
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 900;
+  text-shadow: 0 0 1px rgba(220, 38, 38, 0.4);
+}
+
+.fbas-stamp-sub {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-top: 3px;
+  opacity: 0.9;
+}
+
+/* Optional high slop blurred state toggle */
+.fbas-post-blurred {
+  filter: blur(4px) opacity(0.5);
+  transition: filter 0.25s ease;
+}
+
+.fbas-show-post-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #374151;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.fbas-show-post-btn:hover {
+  background: #ffffff;
+  color: #111827;
+}
+
+/* Animations */
+@keyframes fbasFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rubber Stamp Drop / Slam Effect */
+@keyframes fbasStampImpact {
+  0% {
+    opacity: 0;
+    transform: scale(3.5) rotate(-35deg);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(0.9) rotate(-11deg);
+  }
+  80% {
+    transform: scale(1.06) rotate(-16deg);
+  }
+  100% {
+    opacity: 0.96;
+    transform: scale(1) rotate(-14deg);
+  }
+}

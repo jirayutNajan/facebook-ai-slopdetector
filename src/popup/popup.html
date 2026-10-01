@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook AI Slop Detector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="../icons/icon48.png" alt="Logo" class="logo">
+        <div>
+          <h1>AI Slop Detector</h1>
+          <p class="subtitle">Powered by Jev (TypeSafe AI)</p>
+        </div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="toggle-active" checked>
+        <span class="slider round"></span>
+      </label>
+    </header>
+
+    <!-- Status Banner -->
+    <div id="status-card" class="status-card active">
+      <div class="status-indicator"></div>
+      <span id="status-text">Active & Monitoring Feed</span>
+    </div>
+
+    <!-- Statistics -->
+    <section class="section">
+      <h2 class="section-title">Detection Stats</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-val" id="stat-scanned">0</div>
+          <div class="stat-label">Scanned</div>
+        </div>
+        <div class="stat-box slop">
+          <div class="stat-val" id="stat-slop">0</div>
+          <div class="stat-label">Slop Found</div>
+        </div>
+        <div class="stat-box subtle">
+          <div class="stat-val" id="stat-subtle">0</div>
+          <div class="stat-label">60-70%</div>
+        </div>
+        <div class="stat-box stamp">
+          <div class="stat-val" id="stat-stamp">0</div>
+          <div class="stat-label">&gt; 80% Stamp</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Threshold Legend -->
+    <section class="section">
+      <h2 class="section-title">Display Levels</h2>
+      <div class="legend-list">
+        <div class="legend-item">
+          <span class="legend-badge clean">&lt; 60%</span>
+          <span>Clean Post (No overlay)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-badge subtle">60 - 70%</span>
+          <span>Subtle Amber Banner</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-badge prominent">70 - 80%</span>
+          <span>Darker Orange Banner</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-badge stamp">&gt; 80%</span>
+          <span>Red Rubber Stamp Animation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- API Key Settings -->
+    <section class="section">
+      <div class="section-header-row">
+        <h2 class="section-title">Jev API Key</h2>
+        <span id="key-badge" class="badge-builtin">Built-in .env</span>
+      </div>
+      <div class="input-group">
+        <input type="password" id="api-key-input" placeholder="apikey_..." autocomplete="off">
+        <button id="toggle-key-visibility" class="btn-icon" title="Show/Hide Key">👁️</button>
+      </div>
+      <button id="save-key-btn" class="btn-primary">Update Custom Key</button>
+      <div id="key-message" class="message-text"></div>
+    </section>
+
+    <!-- Actions Footer -->
+    <footer class="footer">
+      <button id="clear-cache-btn" class="btn-secondary">Clear Cache</button>
+      <span class="footer-tip">v1.0.0 · Chrome MV3</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

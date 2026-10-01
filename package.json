@@ -1,0 +1,14 @@
+{
+  "name": "facebook-ai-slop-detector",
+  "version": "1.0.0",
+  "description": "Chrome extension to detect AI slop on Facebook feed using Jev AI",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "test": "node test/extension.test.js"
+  },
+  "keywords": ["facebook", "ai-slop", "chrome-extension", "jev"],
+  "author": "",
+  "license": "MIT"
+}
